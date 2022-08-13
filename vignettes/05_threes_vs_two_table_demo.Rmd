@@ -49,7 +49,7 @@ df_team_shots_pull <- map_dfr(
 
 
 ```{r}
-# test
+
 df_threes <- df_team_shots_pull %>%
   # this game is listed in dataset but was never played due to Boston Marathon bombing; thus removed below.
   filter(game_id != "0021201214") %>%
