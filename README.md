@@ -1,4 +1,4 @@
-## reactablefmtr <a href='https://kcuilla.github.io/reactablefmtr/index.html'><img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/docs/reference/figures/reactablefmtr_hex_logo.png" align="right" width="150" height="185"/>
+## reactablefmtr <a href='https://kcuilla.github.io/reactablefmtr/index.html'><img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/logo.png" align="right" width="150" height="185"/>
 
 <!-- badges: start -->
 [![CRAN Status](https://www.r-pkg.org/badges/version/reactablefmtr?color=blue)](https://cran.r-project.org/package=reactablefmtr?color=blue)
@@ -13,7 +13,7 @@ The {reactablefmtr} package streamlines and enhances the styling and formatting 
   
 * **Custom table themes** that can [easily](https://kcuilla.github.io/reactablefmtr/articles/themes.html) be applied to any {reactablefmtr} or {reactable} table.
   
-* **Embed images** directly from the web into your [table](https://kcuilla.github.io/reactablefmtr/articles/embed_img.html).
+* **Embed images** directly from the web into your table.
   
 * **Save tables** as static PNG files or as interactive HTML files.
 
@@ -63,11 +63,13 @@ reactable(
   )
 )
 ```
-<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/reactable_example.JPG" align="center" />
+<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/reactableexample2.gif" align="center" />
 
-The {reactablefmtr} package presents a much simpler method of creating bar charts with the `data_bars()` function. In addition to needing far less code, there are also a multitude of customization options available to easily change the appearance of the bar charts.
+The {reactablefmtr} package presents a much simpler method of creating bar charts with the `data_bars()` function. In addition to needing far less code, there are also a multitude of customization options available to easily change the appearance of the bar charts, and as an added bonus, the bars animate on sort!
 
 ```{r}
+library(reactablefmtr)
+
 reactable(
   data,
   defaultColDef = colDef(
@@ -75,7 +77,7 @@ reactable(
   )
 )
 ```
-<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/reactablefmtr_example.JPG" align="center" />
+<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/reactablefmtrexample2.gif" align="center" />
 
 ## Examples
 
@@ -99,42 +101,28 @@ Use `color_scales()` to assign conditional colors to cells based on their relati
 
 <img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/colorscales_heatmap2.gif" align="center"/>
 
+
 ### Bubble Grids
   
-Bubble grid tables can be created using `bubble_grid()`. Bubbles can be shown as circles or squares using the `shape` parameter.
+Bubble grid tables can be created using `bubble_grid()`. Bubbles can be shown as circles or squares using the `shape` parameter. To see how the example below was created, please check out the [bubble grids](https://kcuilla.github.io/reactablefmtr/articles/reactablefmtr_cookbook.html#adjust-size-of-bubbles) section in the {reactablefmtr} cookbook:
 
-<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/bubble_grid.JPG" align="center"/>
+<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/bubblegridexample.gif" align="center"/>
 
  
-### Gauge Charts
-  
-Gauge charts aka speedometer charts, can be created using `gauge_chart()`. You may choose to display the min and max underneath the gauge chart by setting `show_min_max` to TRUE:
-  
-<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/gauge_charts.JPG" align="center"/>
-  
-  
-### Icon Sets
-
-Use `icon_sets()` to conditionally assign icons to values from the [Font Awesome](https://fontawesome.com/icons?d=gallery&p=2) library based on their relative values. Any number of icons and/or colors can be applied to values within each column. Customization options such as number formatting and positioning of icons are also available. See the [tutorial](https://kcuilla.github.io/reactablefmtr/articles/icon_sets.html) for more options.
-
-
-<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/MPGbyCarTypeICONS.png" algin="center"/>
-  
- 
-### Icon Assign
-
-Use `icon_assign()` to assign icons to values from the [Font Awesome](https://fontawesome.com/icons?d=gallery&p=2) library. Multiple customization options are available, such as bucketing values and the option to show/hide values next to the icons. See the [tutorial](https://kcuilla.github.io/reactablefmtr/articles/icon_assign.html) for more options.
-
-<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/5E26F646-AE47-4044-B01D-6BEBF28DD08B.jpeg" align="center" />
-
-
 ## Custom Themes
 
 Within {reactablefmtr}, there are 24+ custom table themes. The themes include [bootstrap](https://bootswatch.com/) themes, themes inspired by news/sports sites such as The New York Times, FiveThirtyEight, and ESPN, as well as other custom themes that can only be found within {reactablefmtr}. The themes can be applied easily to tables by simply referencing the theme name. Additional customization options, such as changing the font size, font color, etc. are also [available](https://kcuilla.github.io/reactablefmtr/articles/themes.html).
 
 An example of the fivethirtyeight() theme:
 
-<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/78A671F4-6705-4EE9-9B49-D29934FFE019.jpeg" align="center" />
+<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/fivethirtyeightthemeexample.gif" align="center" />
+
+
+## Using with Crosstalk or Shiny
+
+{reactablefmtr} works well when linked to UI controls via [{crosstalk}](https://rstudio.github.io/crosstalk/using.html) or within a Shiny app. 
+
+<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/crosstalkexamplegif.gif" align="center" />
 
 
 ## Add a Title, Subtitle, and Source
@@ -155,7 +143,7 @@ reactable(iris[10:29, ]) %>%
 
 Who says {reactablefmtr} can just be used to make tables? You can create data visualizations like the one shown below. [Source code](https://github.com/kcuilla/Tidy-Tuesday/blob/main/2021_26/park_spending.R) 
 
-<img src="https://raw.githubusercontent.com/kcuilla/Tidy-Tuesday/main/2021_26/park_spending_per_resident.png" align = "center" />
+<img src="https://raw.githubusercontent.com/kcuilla/reactablefmtr/main/man/figures/bloombergchartgif.gif" align = "center" />
 
 
 ## Save Static or Interactive Tables
@@ -192,7 +180,7 @@ save_reactable("table.png")
 
 * A huge thank you to Greg Lin for creating the amazing [{reactable}](https://glin.github.io/reactable/index.html) package! Without Greg, {reactablefmtr} simply would not exist! 
 
-* Thank you to June Chao for contributing to the span option in `color_scales()` and `color_tiles()`!
-
 * Thank you to Kent Russell for putting together the wonderful [{dataui}](https://timelyportfolio.github.io/dataui/index.html) package and suggesting integrating the code with {reactablefmtr} to allow interactive sparkline customization in reactable tables.
+
+* Last but not least, thank you to those below who have contributed to the development and/or documentation of the package! [@yjunechoe](https://github.com/yjunechoe), [@shannonpileggi](https://github.com/shannonpileggi), [@TimTeaFan](https://github.com/TimTeaFan)
 
